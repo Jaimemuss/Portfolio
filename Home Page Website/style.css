@@ -1,0 +1,244 @@
+body, h1, h2, h3, h4, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f0e1d2, #d9c9b2);
+    color: #5d4a4a;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    background: rgba(93, 74, 74, 0.9);
+    color: #f5f5f5;
+    padding: 40px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    filter: blur(15px);
+    z-index: 0;
+}
+
+h1 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+h2, h3 {
+    margin: 15px 0;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+section {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 40px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    flex: 1 1 300px;
+    transition: transform 0.4s, box-shadow 0.4s;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+section:hover::before {
+    opacity: 0.3;
+}
+
+section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 60px rgba(0, 0, 0, 0.7);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    transition: transform 0.4s, filter 0.4s;
+}
+
+img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+h4 {
+    color: #7b5b3a;
+    margin-bottom: 15px;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+h4::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #d7b89e;
+    margin: 10px auto;
+}
+
+ul {
+    list-style: none;
+    text-align: center;
+}
+
+ul li {
+    margin: 15px 0;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+ul li::before {
+    content: '➤';
+    position: absolute;
+    left: -20px;
+    color: #8d6e63;
+    transition: color 0.4s;
+}
+
+ul li:hover {
+    transform: scale(1.05);
+}
+
+ul li:hover::before {
+    color: #d7b89e;
+}
+
+a {
+    text-decoration: none;
+    color: #7b5b3a;
+    transition: color 0.4s, text-shadow 0.4s;
+    font-weight: bold;
+    position: relative;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: #d7b89e;
+    bottom: -4px;
+    left: 50%;
+    transition: width 0.4s, left 0.4s;
+}
+
+a:hover {
+    color: #5d4037;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    transition: border-color 0.4s, box-shadow 0.4s;
+}
+
+input[type="text"]:focus {
+    border-color: #d7b89e;
+    outline: none;
+    box-shadow: 0 0 10px rgba(215, 184, 158, 0.5);
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d7b89e;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.4s, transform 0.2s;
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: #b5a283;
+    transform: scale(1.05);
+}
+
+#clock {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2em;
+    font-weight: bold;
+    color: #295f35;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+section {
+    animation: float 3s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    section {
+        margin: 10px auto;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 2.8em;
+    }
+
+    h4 {
+        font-size: 1.6em;
+    }
+}
